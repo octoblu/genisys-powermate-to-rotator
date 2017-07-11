@@ -1,0 +1,6 @@
+# Configuration for the genisys-powermate-to-rotator daemon
+#
+# Example:
+#   export NODE_ENV="production"
+
+export MESHBLU_CONNECTOR_PM2_HOME="/var/run/genisys-powermate-to-rotator"
