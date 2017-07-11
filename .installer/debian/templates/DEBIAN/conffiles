@@ -1,0 +1,4 @@
+/etc/default/genisys-powermate-to-rotator
+/etc/init/genisys-powermate-to-rotator.conf
+/etc/init.d/genisys-powermate-to-rotator
+/etc/systemd/system/genisys-powermate-to-rotator.service
