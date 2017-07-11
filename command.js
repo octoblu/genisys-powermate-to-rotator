@@ -50,8 +50,10 @@ const command = new PowermateToRotatorCommand({ argv: process.argv })
 command
   .run()
   .catch((error) => {
+    console.log(`run threw an error: ${error.message}`)
     command.die(error)
   })
   .then(() => {
+    console.log(`run exited successfully`)
     process.exit(0)
   })
