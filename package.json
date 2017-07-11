@@ -1,6 +1,6 @@
 {
   "name": "genisys-powermate-to-rotator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "bin": {
     "genisys-powermate-to-rotator": "command.js"

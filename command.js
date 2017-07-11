@@ -36,7 +36,6 @@ class PowermateToRotatorCommand {
 
   run() {
     const { powermateUrl, rotatorUrl } = this.octoDash.parseOptions()
-    console.log({powermateUrl, rotatorUrl})
     const powermateToRotator = new PowermateToRotator({powermateUrl, rotatorUrl})
     return powermateToRotator.connect()
   }
