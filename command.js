@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const OctoDash = require('octodash')
 const packageJSON = require('./package.json')
 const PowermateToRotator = require('./lib/powermate-to-rotator')
@@ -9,7 +10,7 @@ const CLI_OPTIONS = [
     type: 'string',
     required: true,
     env: 'GENISYS_POWERMATE_TO_ROTATOR_POWERMATE_URL',
-    help: "The URL to the powermate websocket",
+    help: 'The URL to the powermate websocket',
     helpArg: 'URL',
     default: 'http://localhost:52052',
   },
@@ -18,10 +19,10 @@ const CLI_OPTIONS = [
     type: 'string',
     required: true,
     env: 'GENISYS_POWERMATE_TO_ROTATOR_ROTATOR_URL',
-    help: "The URL to the rotator server",
+    help: 'The URL to the rotator server',
     helpArg: 'URL',
     default: 'http://localhost:5050',
-  }
+  },
 ]
 
 class PowermateToRotatorCommand {
@@ -36,8 +37,9 @@ class PowermateToRotatorCommand {
 
   run() {
     const { powermateUrl, rotatorUrl } = this.octoDash.parseOptions()
-    const powermateToRotator = new PowermateToRotator({powermateUrl, rotatorUrl})
-    return powermateToRotator.connect()
+    const powermateToRotator = new PowermateToRotator({ powermateUrl, rotatorUrl })
+    powermateToRotator.on('error', error => console.error('error', error.stack)) // eslint-disable-line no-console
+    powermateToRotator.connect()
   }
 
   die(error) {
@@ -46,13 +48,4 @@ class PowermateToRotatorCommand {
 }
 
 const command = new PowermateToRotatorCommand({ argv: process.argv })
-command
-  .run()
-  .catch((error) => {
-    console.log(`run threw an error: ${error.message}`)
-    command.die(error)
-  })
-  .then(() => {
-    console.log(`run exited successfully`)
-    process.exit(0)
-  })
+command.run()

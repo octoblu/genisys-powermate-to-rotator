@@ -1,20 +1,33 @@
 {
   "name": "genisys-powermate-to-rotator",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "main": "index.js",
   "bin": {
     "genisys-powermate-to-rotator": "command.js"
   },
   "scripts": {
-    "peterIsMakingMeDoThis": true
+    "test": "mocha"
   },
   "repository": "git@github.com:octoblu/genisys-powermate-to-rotator.git",
   "author": "serveradmin@octoblu.com",
   "license": "MIT",
   "dependencies": {
+    "debug": "^3.0.0",
     "lodash": "^4.17.4",
     "octodash": "^1.3.1",
     "request": "^2.81.0",
     "ws": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-lodash-fp": "^2.1.3",
+    "mocha": "^3.5.0",
+    "server-destroy": "^1.0.1",
+    "shmock": "^0.8.1",
+    "sinon": "^3.2.0",
+    "sinon-chai": "^2.13.0"
   }
 }
